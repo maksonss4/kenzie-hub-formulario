@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-interface IButtonViewPassword {
+interface IButtonIcon {
   seePassword: boolean;
 }
 
-export const ButtonViewPassword = styled.button<IButtonViewPassword>`
+export const ButtonIcon = styled.button<IButtonIcon>`
   position: absolute;
   right: 0.5rem;
   top: 1.55rem;
