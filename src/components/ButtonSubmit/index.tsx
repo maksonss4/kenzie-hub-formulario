@@ -6,5 +6,9 @@ interface IButtonSubmit {
 }
 
 export function ButtonSubmit({ text, disabled }: IButtonSubmit) {
-  return <ButtonStyled disabled={disabled}>{text}</ButtonStyled>;
+  return (
+    <ButtonStyled type="submit" disabled={disabled}>
+      {text}
+    </ButtonStyled>
+  );
 }
