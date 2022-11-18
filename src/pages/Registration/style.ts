@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { FieldError } from "react-hook-form";
+import styled, { css } from "styled-components";
 
 export const ContainerRegistration = styled.div`
   display: flex;
@@ -64,12 +65,23 @@ export const ContainerRegistration = styled.div`
   }
 `;
 
-export const InputStyled = styled.input`
+interface IInputStyled {
+  error: FieldError | undefined;
+}
+
+export const InputStyled = styled.input<IInputStyled>`
+  ${({ error }) =>
+    error
+      ? css`
+          border: 0.063rem solid var(--red);
+        `
+      : css`
+          border: 0.063rem solid transparent;
+        `}
   border-radius: 0.201rem;
   padding: 0.4rem 0.5rem;
   background-color: var(--gray-3);
   color: var(--gray-5);
-  border: 0.063rem solid transparent;
 
   ::placeholder {
     color: var(--gray-4);
