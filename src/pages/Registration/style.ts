@@ -1,7 +1,7 @@
 import { FieldError } from "react-hook-form";
 import styled, { css } from "styled-components";
 
-export const ContainerLogin = styled.div`
+export const ContainerRegistration = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@ export const ContainerLogin = styled.div`
   gap: 1rem;
   padding: 0.938rem;
 
-  .div-form-login {
+  .div-form-registration {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,6 +27,30 @@ export const ContainerLogin = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    select {
+      border-radius: 0.201rem;
+      padding: 0.4rem 0.5rem;
+      background-color: var(--gray-3);
+      color: var(--gray-5);
+      border: 0.063rem solid transparent;
+
+      ::placeholder {
+        color: var(--gray-4);
+        font-weight: 400;
+        font-size: 0.9rem;
+      }
+
+      :focus {
+        outline: none;
+        border: 0.063rem solid var(--gray-5);
+
+        ::placeholder {
+          color: var(--gray-5);
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
 
   a {
