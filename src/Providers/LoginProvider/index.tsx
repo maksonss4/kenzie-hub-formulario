@@ -13,9 +13,17 @@ interface ILoginContext {
   user: IUser;
   logout: () => void;
   createTech: (data: ICreateTech) => void;
+  editTech: (data: IEditTech) => void;
   techs: ITech[];
   isOpenModalCreateTech: boolean;
   openCloseModalCreateTech: () => void;
+  isOpenModalEditTech: boolean;
+  openCloseModalEditTech: () => void;
+  setTechDeleteEdit: (data: ITech) => void;
+  techDeleteEdit: ITech;
+  nameTechDeleteEdit: string;
+  setNameTechDeleteEdit: (s: string) => void;
+  getData: () => void;
 }
 
 interface ITechResponse {
@@ -39,6 +47,10 @@ interface ITech {
 
 export interface ICreateTech {
   title: string;
+  status: string;
+}
+
+export interface IEditTech {
   status: string;
 }
 
@@ -67,14 +79,21 @@ export interface IUser {
 }
 
 export function LoginProvider({ children }: IProvidersProps) {
+  const [techDeleteEdit, setTechDeleteEdit] = useState({} as ITech);
+  const [nameTechDeleteEdit, setNameTechDeleteEdit] = useState("");
   const [seePassword, setSeePassword] = useState(false);
   const [user, setUser] = useState({} as IUser);
   const [techs, setTechs] = useState([] as ITech[]);
   const [isOpenModalCreateTech, setIsOpenModalCreateTech] = useState(false);
+  const [isOpenModalEditTech, setIsOpenModalEditTech] = useState(false);
   const navigate = useNavigate();
 
   function openCloseModalCreateTech() {
     setIsOpenModalCreateTech(!isOpenModalCreateTech);
+  }
+
+  function openCloseModalEditTech() {
+    setIsOpenModalEditTech(!isOpenModalEditTech);
   }
 
   function getData() {
@@ -134,9 +153,28 @@ export function LoginProvider({ children }: IProvidersProps) {
         getData();
         openCloseModalCreateTech();
       })
-      .catch((err) =>
+      .catch(() =>
         toast.error("Tecnologia cadastrada anteriormente", { autoClose: 3000 })
       );
+  }
+
+  function editTech(data: IEditTech) {
+    data.status === techDeleteEdit.status
+      ? toast.info("Altere o status da tech selecionada", { autoClose: 3000 })
+      : api
+          .put(`/users/techs/${techDeleteEdit.id}`, data)
+          .then(() => {
+            toast.success("Tecnologia editada com sucesso", {
+              autoClose: 3000,
+            });
+            getData();
+            openCloseModalEditTech();
+          })
+          .catch(() => {
+            toast.error("Tecnologia cadastrada anteriormente", {
+              autoClose: 3000,
+            });
+          });
   }
 
   function viewPassword() {
@@ -155,6 +193,14 @@ export function LoginProvider({ children }: IProvidersProps) {
         logout,
         isOpenModalCreateTech,
         openCloseModalCreateTech,
+        isOpenModalEditTech,
+        openCloseModalEditTech,
+        editTech,
+        setTechDeleteEdit,
+        techDeleteEdit,
+        nameTechDeleteEdit,
+        getData,
+        setNameTechDeleteEdit,
       }}
     >
       {children}

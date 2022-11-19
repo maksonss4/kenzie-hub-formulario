@@ -1,10 +1,10 @@
 import { IProvidersProps } from "../../Providers";
-import { ModalCreateTechContainer } from "./style";
+import { ModalContainer } from "./style";
 
-export function ModalCreateTech({ children }: IProvidersProps) {
+export function Modal({ children }: IProvidersProps) {
   return (
-    <ModalCreateTechContainer>
+    <ModalContainer>
       <div className="div-modal-container">{children}</div>
-    </ModalCreateTechContainer>
+    </ModalContainer>
   );
 }

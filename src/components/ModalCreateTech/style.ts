@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalCreateTechContainer = styled.div`
+export const ModalContainer = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -14,6 +14,41 @@ export const ModalCreateTechContainer = styled.div`
   .div-modal-container {
     width: 100%;
     max-width: 400px;
+  }
+
+  .div-delet-tech {
+    background-color: var(--gray-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .div-modal-delete-tech {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .div-buttons-edit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+
+    button {
+      border-radius: 0.201rem;
+      width: 100%;
+    }
+
+    .button-excluir-tech {
+      background-color: var(--gray-4);
+      color: var(--gray-5);
+    }
+
+    .confirm-delete-tech {
+      background-color: var(--pink-1);
+      color: var(--gray-5);
+    }
   }
 
   .title-create-tech {
