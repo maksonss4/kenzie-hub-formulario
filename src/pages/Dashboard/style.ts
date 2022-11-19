@@ -19,6 +19,12 @@ export const HeaderDashboard = styled.header`
     color: var(--gray-5);
     border-radius: 0.201rem;
     padding: 0.3rem 0.5rem;
+    border: 1px solid transparent;
+
+    :hover {
+      border-color: var(--white);
+      transition: 0.5s;
+    }
   }
 
   .box-header {
@@ -71,9 +77,15 @@ export const SectionTechs = styled.section`
       justify-content: center;
       align-items: center;
       border-radius: 0.201rem;
+      border: 1px solid transparent;
       background-color: var(--gray-2);
       color: var(--gray-5);
       padding: 0.2rem;
+
+      :hover {
+        border-color: var(--green);
+        transition: 0.5s;
+      }
     }
   }
 `;
@@ -97,6 +109,13 @@ export const LiTech = styled.li`
   padding: 0.4rem;
   border-radius: 0.201rem;
   background-color: var(--gray-1);
+  border: 1px solid transparent;
+
+  :hover {
+    transition: 0.5s;
+    border-color: var(--white);
+    cursor: pointer;
+  }
 
   @media (min-width: 210px) {
     flex-direction: row;

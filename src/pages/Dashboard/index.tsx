@@ -202,7 +202,7 @@ export function Dashboard() {
         <Modal>
           <div className="div-modal-create-tech">
             <div className="title-create-tech">
-              <H2 text="Detalhes da tecnologia" />
+              <H2 text="Altere o status da tecnologia" />
               <button onClick={() => openCloseModalEditTech()}>X</button>
             </div>
             <form
