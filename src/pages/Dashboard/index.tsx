@@ -3,6 +3,7 @@ import { Logo } from "../../components/Logo";
 import { Span } from "../../components/Span";
 import {
   ContainerDashboard,
+  DivNoTechs,
   HeaderDashboard,
   InputStyled,
   LiTech,
@@ -139,7 +140,10 @@ export function Dashboard() {
                     })}
                   </UlTechs>
                 ) : (
-                  <p>Voce não tem techs cadastradas</p>
+                  <DivNoTechs>
+                    <p>Você não possui tecnologias cadastradas.</p>
+                    <p>Adicione tecnologias que você tem habilidade.</p>
+                  </DivNoTechs>
                 )}
               </SectionTechs>
             </main>

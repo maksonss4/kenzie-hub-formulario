@@ -156,3 +156,11 @@ export const InputStyled = styled.input<IInputStyled>`
     }
   }
 `;
+
+export const DivNoTechs = styled.div`
+  text-align: center;
+
+  p {
+    color: var(--gray-4);
+  }
+`;
