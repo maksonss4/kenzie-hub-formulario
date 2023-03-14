@@ -2,7 +2,7 @@
 
 ## 1. Descrição
 
-O projeto se trata de um app onde usuários cadastrados podem criar sua lista de ferramentas e tecnologias, atualiza-las e/ou deleta-las. Você pode acessar a aplicação [clicando aqui](https://github.com/maksonss4/json-server-doit), faça o cadastro, login e após isso pode criar, atualizar e deletar suas tecnologias e ferramentas.
+O projeto se trata de um app onde usuários cadastrados podem criar sua lista de ferramentas e tecnologias, atualizá-las e/ou deletá-las. Você pode acessar a aplicação [clicando aqui](https://github.com/maksonss4/json-server-doit), faça o cadastro, login e após isso pode criar, atualizar e deletar suas tecnologias e ferramentas.
 
 ## 2. Tecnologias utilizadas
 
