@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { DivSrcElements } from "../../components/DivSrcElements";
+import { QrScanner } from "@yudiel/react-qr-scanner";
 
 export function Login() {
   const { seePassword, viewPassword, signIn } = useContext(LoginContext);
@@ -77,6 +78,10 @@ export function Login() {
         <Span text="Ainda não possui uma conta?" />
 
         <Link to={"/registration"}>Cadastre-se</Link>
+        <QrScanner
+          onDecode={(result) => console.log(result)}
+          onError={(error) => console.log(error?.message)}
+        />
       </div>
     </ContainerLogin>
   );
